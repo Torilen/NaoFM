@@ -109,6 +109,12 @@ array_shift($audiotheque);
       <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center pb-50">
           <h4 class="card-title">Playlist</h4>
+		  <div class="btn glow btn-info" onclick="start_playlist();">
+            Run la playlist
+          </div>
+		  <div class="btn glow btn-warning" onclick="stop_playlist();">
+            Stop la playlist
+          </div>
         </div>
         <div class="card-body p-0 pb-1">
           <ul class="list-group list-group-flush">
@@ -116,6 +122,7 @@ array_shift($audiotheque);
 			
 			</div>
           </ul>
+		  
         </div>
       </div>
     </div>
@@ -320,6 +327,30 @@ array_shift($audiotheque);
 			'Access-Control-Allow-Origin': '*'
 		  },
 
+		  success: function (data) {
+			if(data == "1"){
+				
+			}
+		  }
+		});
+	}
+	
+	function start_playlist(){
+		$.ajax({
+		  url: 'http://192.168.0.30:5000/run_playlist',
+		  type: 'POST',
+		  success: function (data) {
+			if(data == "1"){
+				
+			}
+		  }
+		});
+	}
+	
+	function stop_playlist(){
+		$.ajax({
+		  url: 'http://192.168.0.30:5000/stop_playlist',
+		  type: 'POST',
 		  success: function (data) {
 			if(data == "1"){
 				

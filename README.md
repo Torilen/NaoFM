@@ -44,6 +44,6 @@
 Dans le dossier NaoFM, vous devez créer un dossier musique dans lequel vous mettrez les sources audio que vous souhaitez
 >cd /home/pi/NaoFM
 
->python -m pip install flask
+>sudo python -m pip install Flask psutil
 
 >sudo python ./naofm.py -f 103.3
